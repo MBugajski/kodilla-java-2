@@ -22,10 +22,10 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorNormalList() {
         OddNumberDalek dalek = new OddNumberDalek();
-        Integer[] n1 = {1, 2, 3, 4, 5, 6};
-        Integer[] n2 = {1, 3, 5};
-        ArrayList<Integer> allNumbers = new ArrayList<>(Arrays.asList(n1));
-        ArrayList<Integer> oddNumbers = new ArrayList<>(Arrays.asList(n2));
+        Integer[] all = {1, 2, 3, 4, 5, 6};
+        Integer[] odd = {1, 3, 5};
+        ArrayList<Integer> allNumbers = new ArrayList<>(Arrays.asList(all));
+        ArrayList<Integer> oddNumbers = new ArrayList<>(Arrays.asList(odd));
         System.out.println("Testing normal list");
         Assert.assertEquals(oddNumbers, dalek.exterminate(allNumbers));
     }
