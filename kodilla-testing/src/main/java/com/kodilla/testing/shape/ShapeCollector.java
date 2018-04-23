@@ -9,7 +9,7 @@ public class ShapeCollector {
 
     }
 
-    public int collectionSize() {
+    public int getCollectionSize() {
         return 100;
     }
 
