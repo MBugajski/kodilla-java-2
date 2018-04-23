@@ -1,13 +1,20 @@
 package com.kodilla.testing.shape;
 
 public class Square implements Shape {
+    private double sideLength;
+
+    public Square(double sideLength) {
+        this.sideLength = sideLength;
+    }
+
+
     @Override
     public String getShapeName() {
-        return null;
+        return "square";
     }
 
     @Override
     public Double getField() {
-        return null;
+        return Math.pow(sideLength, 2);
     }
 }
