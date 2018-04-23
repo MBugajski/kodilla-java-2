@@ -44,7 +44,7 @@ public class ShapeCollectorTestSuite {
         Shape theShape = new Square(1.2345);
         shapeCollector.addFigure(theShape);
         DecimalFormat decimalFormat = new DecimalFormat("#,##0.0000");
-        String theFigure = theShape.getShapeName() + " with filed of: " + decimalFormat.format(theShape.getField());
+        String theFigure = theShape.getShapeName() + " with a field of: " + decimalFormat.format(theShape.getField());
         //When
         String retrievedFigure;
         retrievedFigure = shapeCollector.getFigure(0);
