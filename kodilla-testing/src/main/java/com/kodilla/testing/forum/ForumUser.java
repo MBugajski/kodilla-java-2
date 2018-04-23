@@ -15,41 +15,51 @@ public class ForumUser {
     }
 
     public void addPost(String author, String postBody) {
-
+        ForumPost thePost = new ForumPost(postBody, author);
+        posts.add(thePost);
     }
 
     public void addComment(ForumPost thePost, String author, String comment) {
-
+        ForumComment theComment = new ForumComment(thePost, comment, author);
+        comments.add(theComment);
     }
 
     public int getPostsQuantity() {
 
-        return 100;
+        return posts.size();
     }
 
     public int getCommentsQuantity() {
 
-        return 100;
+        return comments.size();
     }
 
     public ForumPost getPost(int postNumber) {
 
-        return null;
+        return posts.get(postNumber);
     }
 
     public ForumComment getComment(int commentNumber) {
 
-        return null;
+        return comments.get(commentNumber);
     }
 
     public boolean removePost(ForumPost thePost) {
-
-        return true;
+        if (posts.contains(thePost)) {
+            posts.remove(thePost);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public boolean removeComment(ForumComment theComment) {
-
-        return true;
+        if (comments.contains(theComment)) {
+            comments.remove(theComment);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public String getName() {
