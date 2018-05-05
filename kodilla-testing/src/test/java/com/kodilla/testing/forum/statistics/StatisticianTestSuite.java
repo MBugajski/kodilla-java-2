@@ -1,9 +1,6 @@
 package com.kodilla.testing.forum.statistics;
 
-import org.junit.AfterClass;
 import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -13,23 +10,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class StatisticianTestSuite {
-    private static int testCounter = 0;
-
-    @BeforeClass
-    public static void beforeAllTests() {
-        System.out.println("This is the beginning of the tests.");
-    }
-
-    @AfterClass
-    public static void afterAllTests() {
-        System.out.println("All tests are finished.");
-    }
-
-    @Before
-    public void beforeEveryTest() {
-        testCounter++;
-        System.out.println("Preparing to execute test #" + testCounter);
-    }
 
     @Test
     public void testZeroPosts() {
@@ -59,7 +39,6 @@ public class StatisticianTestSuite {
         when(statisticsMock.usersNames()).thenReturn(users);
         when(statisticsMock.postsCount()).thenReturn(1000);
 
-
         Statistician statistician = new Statistician();
         statistician.calculateAdvStatistics(statisticsMock);
 
@@ -81,7 +60,6 @@ public class StatisticianTestSuite {
         when(statisticsMock.usersNames()).thenReturn(users);
         when(statisticsMock.commentsCount()).thenReturn(0);
 
-
         Statistician statistician = new Statistician();
         statistician.calculateAdvStatistics(statisticsMock);
 
@@ -100,7 +78,6 @@ public class StatisticianTestSuite {
         when(statisticsMock.postsCount()).thenReturn(50);
         when(statisticsMock.commentsCount()).thenReturn(10);
 
-
         Statistician statistician = new Statistician();
         statistician.calculateAdvStatistics(statisticsMock);
 
@@ -117,7 +94,6 @@ public class StatisticianTestSuite {
         Statistics statisticsMock = mock(Statistics.class);
         when(statisticsMock.postsCount()).thenReturn(10);
         when(statisticsMock.commentsCount()).thenReturn(50);
-
 
         Statistician statistician = new Statistician();
         statistician.calculateAdvStatistics(statisticsMock);
@@ -136,7 +112,6 @@ public class StatisticianTestSuite {
         List<String> users = new ArrayList<>();
         when(statisticsMock.usersNames()).thenReturn(users);
         when(statisticsMock.commentsCount()).thenReturn(10);
-
 
         Statistician statistician = new Statistician();
         statistician.calculateAdvStatistics(statisticsMock);
@@ -158,7 +133,6 @@ public class StatisticianTestSuite {
         }
         when(statisticsMock.usersNames()).thenReturn(users);
         when(statisticsMock.postsCount()).thenReturn(10);
-
 
         Statistician statistician = new Statistician();
         statistician.calculateAdvStatistics(statisticsMock);
