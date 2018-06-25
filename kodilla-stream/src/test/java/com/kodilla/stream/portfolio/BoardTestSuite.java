@@ -152,9 +152,6 @@ public class BoardTestSuite {
                 .average()
                 .getAsDouble();
 
-
-
-
         //Then
         Assert.assertEquals(10, averageTimeWorking, 0.001);
     }
