@@ -23,6 +23,18 @@ public class Board {
         doneList.readTasks();
     }
 
+    public void setToDoList(TaskList toDoList) {
+        this.toDoList = toDoList;
+    }
+
+    public void setInProgressList(TaskList inProgressList) {
+        this.inProgressList = inProgressList;
+    }
+
+    public void setDoneList(TaskList doneList) {
+        this.doneList = doneList;
+    }
+
     public TaskList getToDoList() {
         return toDoList;
     }
