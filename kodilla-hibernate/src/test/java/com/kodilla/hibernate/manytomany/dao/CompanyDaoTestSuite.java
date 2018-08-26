@@ -9,13 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.List;
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CompanyDaoTestSuite {
     @Autowired
     CompanyDao companyDao;
+    @Autowired
+    EmployeeDao employeeDao;
 
     @Test
     public void testSaveManyToMany(){
@@ -92,7 +92,7 @@ public class CompanyDaoTestSuite {
         companyDao.save(greyMatter);
 
         //Then
-        Assert.assertEquals(1, companyDao.retrieveByLastName("Clarckson").size());
+        Assert.assertEquals(1, employeeDao.retrieveByLastName("Clarckson").size());
         Assert.assertEquals(1, companyDao.retrieveByFirstThreeLetters("Sof").size());
 
         //CleanUp

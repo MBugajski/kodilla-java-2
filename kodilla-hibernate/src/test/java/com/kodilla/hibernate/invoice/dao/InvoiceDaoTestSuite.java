@@ -68,10 +68,10 @@ public class InvoiceDaoTestSuite {
 //        product1.addItem(item1);
 //        product2.addItem(item2);
         Invoice invoice = new Invoice("1/08/2018");
-        invoice.addItem(item);
-        invoice.addItem(item1);
-        invoice.addItem(item2);
-        invoice.addItem(item3);
+//        invoice.addItem(item);
+//        invoice.addItem(item1);
+//        invoice.addItem(item2);
+//        invoice.addItem(item3);
 
         //When
         invoiceDao.save(invoice);
