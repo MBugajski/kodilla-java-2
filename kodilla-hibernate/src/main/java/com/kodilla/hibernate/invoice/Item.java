@@ -1,11 +1,14 @@
 package com.kodilla.hibernate.invoice;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -34,7 +37,7 @@ public class Item {
     }
 
     @Id
-    @GeneratedValue
+    @GeneratedValue (strategy= GenerationType.AUTO)
     @NotNull
     @Column (name = "ID", unique = true)
     public int getId() {
@@ -43,6 +46,7 @@ public class Item {
 
     @ManyToOne
     @JoinColumn (name = "PRODUCT_ID")
+    @Cascade(CascadeType.ALL)
     public Product getProduct() {
         return product;
     }

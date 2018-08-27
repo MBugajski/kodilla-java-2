@@ -5,6 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -27,7 +28,7 @@ public class Product {
     }
 
     @Id
-    @GeneratedValue
+    @GeneratedValue (strategy= GenerationType.AUTO)
     @NotNull
     @Column (name = "ID", unique = true)
     public int getId() {
@@ -42,7 +43,7 @@ public class Product {
     @OneToMany(
             targetEntity = Item.class,
             mappedBy = "product",
-            cascade = CascadeType.ALL,
+            cascade = CascadeType.REMOVE,
             fetch = FetchType.LAZY
     )
     public List<Item> getItems() {
